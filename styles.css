@@ -69,3 +69,9 @@ body {
     /* touching ground */
     bottom: 0;
 }
+
+/* display score text in lose messages */
+u:hover{
+    color: red;
+    cursor: pointer;
+}
