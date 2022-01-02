@@ -1,3 +1,6 @@
+import { updateGround, setupGround } from "./ground.js";
+
+
 const WORLD_WIDTH = 100;
 const WORLD_HEIGHT = 30;
 
@@ -8,7 +11,10 @@ const world = document.querySelector('[data-world]');
 setPixelToWorldScale();
 window.addEventListener("resize", setPixelToWorldScale);
 
+setupGround();
+
 let lastTime;
+let speedScale;     //should be gradually faster as the game proceeds
 
 function update(time){
     // for first time
@@ -17,7 +23,12 @@ function update(time){
         window.requestAnimationFrame(update);
         return;
     }
-      const delta = time - lastTime;
+    const delta = time - lastTime;
+
+    updateGround(delta, 1);
+
+    lastTime = time;
+    window.requestAnimationFrame(update);
 }
 
 window.requestAnimationFrame(update);
