@@ -95,7 +95,7 @@ function handleLose() {
 
 function setLoseMessages() {
   startScreen.innerHTML = `
-        <b style="font-size:4vmin; color:red">Game Over</b> 
+        <b style="font-size:5vmin; color:red">Game Over</b> 
         <u style="font-size:3vmin">Final Score: ${score_element.textContent}</u>
         <span style="font-size:2vmin">Press Any Key to Retart</span>
     `;
